@@ -1,4 +1,4 @@
-import { Category } from '../../src/app/navbar/category';
+import { Category } from '../../src/app/layout/navbar/nav/category';
 
 export const CATEGORIES: Category[] = [
   { id: 1, name: 'La crèche' },

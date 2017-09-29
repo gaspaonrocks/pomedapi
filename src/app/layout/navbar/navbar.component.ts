@@ -4,7 +4,6 @@ import { Category } from './nav/category';
 import { Subcategory } from './subnav/subcategory';
 import { NavService } from './shared/nav.service';
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

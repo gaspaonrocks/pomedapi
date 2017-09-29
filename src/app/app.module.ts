@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { ClarityModule } from "clarity-angular";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
+  { path: 'contact', component: ContactComponent },
   //{ path: 'path-name/:id', component: ChildComponentName },
   /* {
     path: 'accueil',
@@ -31,19 +34,22 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
-    ),
+      { enableTracing: true }),
+    FormsModule,
     NgbModule.forRoot(),
     ClarityModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [NavbarComponent],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

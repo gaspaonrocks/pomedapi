@@ -1,0 +1,42 @@
+<div [hidden]="sent">
+  <form class="content-container" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <section class="form-block">
+      <label>Contactez-nous</label>
+      <div class="form-group">
+        <label for="aForm_1">Objet du message</label>
+        <input type="text" id="aForm_1" placeholder="Taper ici..." [(ngModel)]="model.title" name="title" size="50">
+      </div>
+      <div class="form-group">
+        <label for="aForm_2">Expéditeur</label>
+        <input type="text" required id="aForm_2" placeholder="Taper ici..." [(ngModel)]="model.sender" name="sender" size="50" #sender="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="aForm_3">A select box</label>
+        <div class="select">
+          <select id="aForm_3">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                  <option>Option 4</option>
+              </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="aForm_4">Corps du message</label>
+        <textarea id="aForm_4" rows="5" [(ngModel)]="model.content" name="content"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer <clr-icon shape="check"></clr-icon></button>
+    </section>
+  </form>
+</div>
+
+<div [hidden]="!sent">
+  <section class="content-container">
+    <h1>You sent :</h1>
+    <p> Title : {{model.title}} </p>
+    <p> Content : {{model.content}} </p>
+    <p> Sender : {{model.sender}} </p>
+    <button class="btn btn-primary" (click)="doItAgain()">Do it again ! <clr-icon shape="undo"></clr-icon></button>
+    <button class="btn btn-primary" (click)="sent = false">Same Result ! <clr-icon shape="undo"></clr-icon></button>
+  </section>
+</div>

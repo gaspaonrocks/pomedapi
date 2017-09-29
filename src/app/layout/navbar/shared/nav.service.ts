@@ -12,7 +12,8 @@ export class NavService {
     return Promise.resolve(CATEGORIES);
   }
 
-  getSubnav (): Promise<Subcategory[]> {
-    return Promise.resolve(SUBCATEGORIES);
+  getSubnav (param): Promise<Subcategory[]> {
+    let arr = SUBCATEGORIES.filter(x => x.cat === param)[0].subs;
+    return Promise.resolve(arr);
   }
 }

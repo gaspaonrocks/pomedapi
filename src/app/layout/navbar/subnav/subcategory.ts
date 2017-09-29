@@ -1,4 +1,4 @@
 export class Subcategory {
-  id: number;
-  name: string;
+  cat: number;
+  subs: any;
 }

@@ -9,9 +9,9 @@ import { ClarityModule } from "clarity-angular";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './common/welcome/welcome.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './common/contact/contact.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },

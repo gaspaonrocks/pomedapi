@@ -7,7 +7,7 @@
           </a>
     </div>
     <div class="header-nav">
-      <a href="#" class="nav-link nav-text" *ngFor="let category of categories">{{category.name}}</a>
+      <a class="nav-link nav-text" *ngFor="let category of categories" (click)="getSubnav(category.id)">{{category.name}}</a>
     </div>
     <div class="header-actions">
       <a routerLink="/contact" class="nav-link nav-icon">
@@ -16,10 +16,10 @@
     </div>
   </header>
 
-  <nav class="subnav">
+  <nav *ngIf="subcategories" class="subnav">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="#" *ngFor="let subcategory of subcategories">{{subcategory.name}}</a>
+        <a class="nav-link" href="#" *ngFor="let subcategory of subcategories">{{subcategory}}</a>
       </li>
     </ul>
   </nav>

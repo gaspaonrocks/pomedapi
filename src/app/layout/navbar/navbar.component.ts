@@ -23,7 +23,13 @@ export class NavbarComponent implements OnInit {
 
   getNav (): void {
     this.navService.getNav().then(categories => this.categories = categories);
-    this.navService.getSubnav().then(subcategories => this.subcategories = subcategories);
+  }
+
+  getSubnav (cat): void {
+    this.navService.getSubnav(cat).then(subcat => {
+      this.subcategories = subcat;
+      console.log(this.subcategories);
+    });
   }
 
   ngOnInit (): void {

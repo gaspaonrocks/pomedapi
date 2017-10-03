@@ -7,7 +7,7 @@
           </a>
     </div>
     <div class="header-nav">
-      <a class="nav-link nav-text" *ngFor="let category of categories" (click)="getSubnav(category.id)">{{category.name}}</a>
+      <a routerLink='/{{category.name.toLowerCase()}}' class="nav-link nav-text" *ngFor="let category of categories" (click)="getSubnav(category.id)">{{category.name}}</a>
     </div>
     <div class="header-actions">
       <a routerLink="/contact" class="nav-link nav-icon">

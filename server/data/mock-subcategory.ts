@@ -1,8 +1,7 @@
 import { Subcategory } from '../../src/app/layout/navbar/subnav/subcategory';
 
 export const SUBCATEGORIES: Subcategory[] = [
-  { cat: 1, subs: ['sub1', 'test1', 'essai1', 'heps1'] }, 
-  { cat: 2, subs: ['sub2', 'test2', 'essai2', 'heps2'] }, 
-  { cat: 3, subs: ['sub3', 'test3', 'essai3', 'heps3'] }, 
-  { cat: 4, subs: ['sub4', 'test4', 'essai4', 'heps4'] }
+  { cat: 1, subs: ['L_histoire', 'l_association', 'le_bureau', 'les_parents'] }, 
+  { cat: 2, subs: ['les_aux', 'la_cuistot', 'les_autres'] }, 
+  { cat: 3, subs: ['les_sorties', 'les_activités', 'les_àcôtés'] }
 ]

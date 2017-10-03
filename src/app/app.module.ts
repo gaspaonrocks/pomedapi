@@ -12,10 +12,12 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { WelcomeComponent } from './common/welcome/welcome.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { ContactComponent } from './common/contact/contact.component';
+import { FlickerComponent } from './common/flicker/flicker.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'photos', component: FlickerComponent },
   //{ path: 'path-name/:id', component: ChildComponentName },
   /* {
     path: 'accueil',
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     WelcomeComponent,
-    ContactComponent
+    ContactComponent,
+    FlickerComponent
   ],
   imports: [
     BrowserModule,

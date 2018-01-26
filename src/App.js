@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Toolbar from "./toolbar/Toolbar";
-import Menu from "./menu/Menu";
+import MainView from "./mainview/MainView";
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
         * then inside have a side menu
         * and have a content view in the middle...
         */}
-        <Menu />
+        <MainView />
       </div>
     );
   }

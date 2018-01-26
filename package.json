@@ -6,6 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start": "react-scripts start",
@@ -14,7 +16,10 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "bulma": "^0.6.2",
+    "font-awesome": "^4.7.0",
     "material-components-web": "^0.28.0",
+    "node-sass-chokidar": "0.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "^1.1.0",

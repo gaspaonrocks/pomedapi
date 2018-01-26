@@ -1,0 +1,13 @@
+$navbar-background-color: #b39ddb;
+$navbar-item-img-max-height: 40px;
+$navbar-height: 70px;
+$navbar-item-hover-background-color: rgba(0, 0, 0, 0.05);
+
+@import "bulma/sass/utilities/initial-variables.sass";
+@import "bulma/sass/utilities/derived-variables.sass";
+@import "bulma/sass/utilities/mixins.sass";
+@import "bulma/sass/components/navbar.sass";
+
+.icon-white {
+  color: white;
+}

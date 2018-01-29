@@ -4,7 +4,6 @@ import "./Menu.css";
 export default class Menu extends Component {
   render() {
     return (
-      
         <aside className="menu">
           <p className="menu-label">General</p>
 

@@ -11,7 +11,7 @@ class Toolbar extends Component {
             <a className="navbar-item" href="https://github.com/gaspaonrocks/pomedapi">
               <img src="https://www.avisdemamans.com/images/article/2013-header-logo-pomme-d-api_link-header.png" alt="Pomedapi: best daycare for children... and their parents" />
             </a>
-            <div className="button navbar-burger" >
+            <div className="navbar-burger" >
               <span />
               <span />
               <span />

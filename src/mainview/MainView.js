@@ -8,7 +8,7 @@ export default class MainView extends Component {
   render() {
     return (
       <div className="columns">
-        <div className="column is-one-quarter">
+        <div className="column is-one-fifth">
           <Menu />
         </div>
         <div className="column">

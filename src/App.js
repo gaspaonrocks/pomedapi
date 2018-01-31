@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import "./App.css";
+import "semantic-ui-css/semantic.min.css";
 
-import Toolbar from "./toolbar/Toolbar";
-import MainView from "./mainview/MainView";
+import { BrowserRouter } from "react-router-dom";
+
+import Navbar from "./components/navbar/Navbar";
+import Toolbar from "./components/toolbar/Toolbar";
+import MainView from "./components/mainview/MainView";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Toolbar />
-        {/*
-        * Maybe create a full width Main view
-        * then inside have a side menu
-        * and have a content view in the middle...
-        */}
-        <MainView />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Toolbar />
+          <MainView />
+        </div>
+      </BrowserRouter>
     );
   }
 }

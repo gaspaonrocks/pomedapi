@@ -1,19 +1,17 @@
 import React, { Component } from "react";
+import { Container, Header } from "semantic-ui-react";
 import "./MainView.css";
 
-import Menu from "../menu/Menu";
-import Content from "../content/Content";
+import Routes from "../../config/Routes";
 
 export default class MainView extends Component {
   render() {
     return (
-      <div className="columns">
-        <div className="column is-one-fifth">
-          <Menu />
-        </div>
-        <div className="column">
-          <Content />
-        </div>
+      <div>
+        <Container text>
+          <Header as="h2">here goes your content</Header>
+          <Routes />
+        </Container>
       </div>
     );
   }

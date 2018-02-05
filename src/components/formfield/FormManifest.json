@@ -1,0 +1,13 @@
+{
+  "user": {
+    "firstName" : "Prénom",
+    "lastName": "Nom",
+    "degrees": "Qualifications",
+    "etc": "helloworld"
+  },
+  "post": {
+    "title" : "Titre",
+    "content" : "Contenu",
+    "etc": "helloworld"
+  }
+}

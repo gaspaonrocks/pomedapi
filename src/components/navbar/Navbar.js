@@ -1,34 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Dropdown, Icon, Menu, Segment } from "semantic-ui-react";
-import DropdownMenu from "semantic-ui-react/dist/commonjs/modules/Dropdown/DropdownMenu";
+import { Icon, Menu } from "semantic-ui-react";
 
 // TODO : use a variable/prop to change color='teal'
 
 const MenuExampleAttached = () => (
   <div>
-    <Menu attached="top" inverted color="teal">
-      <Dropdown item icon="add" simple>
-        <Dropdown.Menu>
-          <Dropdown.Item>Ajouter...</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>
-            <Link to="/formfield">Un Membre du Personnel</Link>
-          </Dropdown.Item>
-          <Dropdown.Item>Une Nouvelle</Dropdown.Item>
-          <Dropdown.Item>Un Menu</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown item icon="edit" simple>
-        <Dropdown.Menu>
-          <Dropdown.Item>Lister...</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Un Membre du Personnel</Dropdown.Item>
-          <Dropdown.Item>Une Nouvelle</Dropdown.Item>
-          <Dropdown.Item>Un Menu</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+    <Menu stackable attached="top" inverted color="teal">
+      <Link to="/">
+        <Menu.Item name="gamepad" onClick={this.handleItemClick}>
+          <Icon name="gamepad" />
+        </Menu.Item>
+      </Link>
+      <Link to="/formfield">
+        <Menu.Item name="add" onClick={this.handleItemClick}>
+          <Icon name="add" />
+        </Menu.Item>
+      </Link>
+      <Link to="/formfield">
+        <Menu.Item name="edit" onClick={this.handleItemClick}>
+          <Icon name="edit" />
+        </Menu.Item>
+      </Link>
 
       <Menu.Menu position="right">
         <div className="ui right aligned category search item">
@@ -45,7 +38,6 @@ const MenuExampleAttached = () => (
       </Menu.Menu>
     </Menu>
 
-    <Segment attached="bottom" />
   </div>
 );
 

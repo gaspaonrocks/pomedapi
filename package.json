@@ -16,7 +16,6 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "bulma": "^0.6.2",
     "font-awesome": "^4.7.0",
     "material-components-web": "^0.28.0",
     "node-sass-chokidar": "0.0.3",
@@ -26,9 +25,7 @@
     "react-scripts": "^1.1.0",
     "semantic-ui": "^2.2.14",
     "semantic-ui-css": "^2.2.14",
-    "semantic-ui-react": "^0.77.2",
-    "vue": "^2.5.11",
-    "vue-mdc": "0.0.10"
+    "semantic-ui-react": "^0.77.2"
   },
   "browserslist": [
     "> 1%",
@@ -43,8 +40,6 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
-    "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   }

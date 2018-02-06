@@ -13,3 +13,5 @@ yarn-error.log
 build/
 
 /semantic
+/src/assets/slideshow.odp
+/src/assets/slideshow.gif

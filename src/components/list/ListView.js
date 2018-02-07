@@ -13,7 +13,7 @@ const options = [
     text: "Utilisateur",
     as: NavLink,
     name: "user",
-    to: "/listview/user"
+    to: "/listview/users"
   },
   {
     key: "p",
@@ -21,7 +21,7 @@ const options = [
     text: "Billet",
     as: NavLink,
     name: "post",
-    to: "/listview/post"
+    to: "/listview/posts"
   }
 ];
 
@@ -34,10 +34,11 @@ export default class ListView extends Component {
   render() {
     return (
       <div>
+        <h1>Choose what you are gonna list</h1>
         <Dropdown placeholder='Select Category' fluid selection options={options} />
         <br />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/user`} component={ListUsers} />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/post`} component={ListPosts} />
+        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/users`} component={ListUsers} />
+        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/posts`} component={ListPosts} />
       </div>
     );
   }

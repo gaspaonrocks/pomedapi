@@ -9,7 +9,6 @@ export default class MainView extends Component {
     return (
       <div>
         <Container text>
-          <Header as="h2">here goes your content</Header>
           <Routes />
         </Container>
       </div>

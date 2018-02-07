@@ -12,6 +12,7 @@ export default class ListUsersView extends Component {
   }
 
   componentDidMount() {
+    // TODO : => extraire cette logique et l'inclure dans un service, voire dans un HighOrderComponent
     return axios.get('http://localhost:12345/users')
       .then(response => {
         this.setState({

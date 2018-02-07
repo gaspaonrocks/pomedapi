@@ -1,7 +1,6 @@
 {
   "posts": [],
-  "users": [
-    {
+  "users": [{
       "firstName": "Mathilde",
       "lastName": "Chapolard",
       "email": "matchap@test.com",

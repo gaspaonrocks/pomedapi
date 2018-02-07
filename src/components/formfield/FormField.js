@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Select } from "semantic-ui-react";
 import { Route, NavLink } from "react-router-dom";
 import FormUser from "./FormUser";
+import FormPost from "./FormPost";
 
 // TODO : => pass the 'options' to a config file
 const options = [
@@ -33,21 +34,11 @@ export default class FormField extends Component {
     return (
       <div>
         <Form>
-          <Form.Field
-            control={Select}
-            name="formType"
-            label="Catégorie"
-            options={options}
-            placeholder="Catégorie"
-          />
+          <Form.Field control={Select} name="formType" label="Catégorie" options={options} placeholder="Catégorie" />
         </Form>
-
         <br />
-        <Route
-          exact /* the exact attributes is where its at */
-          path={`${this.props.match.path}/user`}
-          component={FormUser}
-        />
+        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/user`} component={FormUser} />
+        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/post`} component={FormPost} />
       </div>
     );
   }

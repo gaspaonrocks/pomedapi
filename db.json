@@ -1,0 +1,23 @@
+{
+  "posts": [],
+  "users": [
+    {
+      "firstName": "Mathilde",
+      "lastName": "Chapolard",
+      "email": "matchap@test.com",
+      "gender": "female",
+      "contract": "fullTime",
+      "about": "ola",
+      "id": 5
+    },
+    {
+      "firstName": "Sacha",
+      "lastName": "GRASSO",
+      "email": "sacgrasso@test.com",
+      "gender": "male",
+      "contract": "fullTime",
+      "about": "ola",
+      "id": 6
+    }
+  ]
+}

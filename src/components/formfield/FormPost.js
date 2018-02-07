@@ -35,7 +35,7 @@ export default class FormFieldPost extends Component {
       author: this.state.author
     };
     // TODO : => penser à tester dans le même environnement ou à trouver un moyen de les faire communiquer
-    fetch("http://localhost:12345/api/blog-posts", { method: "POST", body: post })
+    fetch("http://localhost:12345/blog-posts", { method: "POST", body: post })
       .then(response => console.log(response))
       .catch(error => console.log(error));
   };

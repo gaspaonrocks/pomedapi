@@ -17,7 +17,7 @@ const MenuExampleAttached = () => (
           <Icon name="add" />
         </Menu.Item>
       </Link>
-      <Link to="/formfield">
+      <Link to="/listview">
         <Menu.Item name="edit" onClick={this.handleItemClick}>
           <Icon name="edit" />
         </Menu.Item>

@@ -13,7 +13,8 @@
     "start": "react-scripts start",
     "react-build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json-server": "./node_modules/.bin/json-server --watch ./db.json --port 12345"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -41,6 +42,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "json-server": "^0.12.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   }

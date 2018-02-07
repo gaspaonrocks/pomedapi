@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown } from 'semantic-ui-react'
 import { Route, NavLink } from "react-router-dom";
-import FormUser from "./FormUser";
-import FormPost from "./FormPost";
+
+import ListUsers from './ListUsers';
+import ListPosts from './ListPosts';
 
 // TODO : => pass the 'options' to a config file
 const options = [
@@ -12,7 +13,7 @@ const options = [
     text: "Utilisateur",
     as: NavLink,
     name: "user",
-    to: "/formfield/user"
+    to: "/listview/user"
   },
   {
     key: "p",
@@ -20,11 +21,11 @@ const options = [
     text: "Billet",
     as: NavLink,
     name: "post",
-    to: "/formfield/post"
+    to: "/listview/post"
   }
 ];
 
-export default class FormField extends Component {
+export default class ListView extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -35,8 +36,8 @@ export default class FormField extends Component {
       <div>
         <Dropdown placeholder='Select Category' fluid selection options={options} />
         <br />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/user`} component={FormUser} />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/post`} component={FormPost} />
+        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/user`} component={ListUsers} />
+        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/post`} component={ListPosts} />
       </div>
     );
   }

@@ -13,5 +13,8 @@ module.exports = {
       rows.push(row);
     }
     return rows;
+  },
+  testFunction: () => {
+    return console.log("coucou");
   }
 };

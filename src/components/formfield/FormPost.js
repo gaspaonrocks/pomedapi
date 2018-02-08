@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Input, Select, TextArea } from "semantic-ui-react";
-import axios from "axios";
+import FormService from "./FormService";
 import { Redirect } from "react-router-dom";
 
 // TODO : => pass the options to a config file
@@ -31,8 +31,8 @@ export default class FormFieldPost extends Component {
       author: "Sacha GRASSO"
     };
     // TODO : => penser à tester dans le même environnement ou à trouver un moyen de les faire communiquer
-    return axios
-      .post("http://localhost:12345/posts", post)
+    return FormService.posts
+      .post(post)
       .then(response => {
         console.log(response);
         this.setState({ redirect: true });

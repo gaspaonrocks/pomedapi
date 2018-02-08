@@ -8,7 +8,7 @@ import {
   TextArea
 } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
-import axios from "axios";
+import FormService from "./FormService";
 
 // TODO : => pass the options to a config file
 const options = [
@@ -25,7 +25,6 @@ export default class FormFieldUser extends Component {
   handleForm = (e, data) => {};
 
   handleChange = (e, data) => {
-    console.log(data);
     data.type === "checkbox"
       ? this.setState({ [data.name]: data.checked })
       : this.setState({ [data.name]: data.value });
@@ -40,14 +39,20 @@ export default class FormFieldUser extends Component {
       contract: this.state.contract,
       about: this.state.about
     };
-    console.log(user);
-    return axios
-      .post("http://localhost:12345/users", user)
+    return FormService.users
+      .post(user)
       .then(response => {
         console.log(response);
         this.setState({ redirect: true });
       })
       .catch(error => console.log(error));
+    /*  return axios
+      .post("http://localhost:12345/users", user)
+      .then(response => {
+        console.log(response);
+        this.setState({ redirect: true });
+      })
+      .catch(error => console.log(error)); */
     // TODO : => penser à tester dans le même environnement ou à trouver un moyen de les faire communiquer
     /* fetch("http://localhost:12345/users", { method: "POST", body: user })
       .then(response => console.log(response))
@@ -58,7 +63,7 @@ export default class FormFieldUser extends Component {
     const { redirect } = this.state;
 
     if (redirect) {
-      return <Redirect to="/listview/posts" />;
+      return <Redirect to="/listview/users" />;
     }
 
     return (

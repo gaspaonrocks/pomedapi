@@ -67,6 +67,15 @@
       "contract": "fullTime",
       "about": "miaouuuuu",
       "id": 9
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Kelso",
+      "email": "bob@test.com",
+      "gender": "male",
+      "contract": "partTime",
+      "about": "He likes cookies",
+      "id": 10
     }
   ]
 }

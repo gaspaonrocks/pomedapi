@@ -1,6 +1,29 @@
 {
-  "posts": [],
-  "users": [{
+  "posts": [
+    {
+      "title": "First Post",
+      "content": "hello world",
+      "tags": "tag2",
+      "author": "Sacha GRASSO",
+      "id": 1
+    },
+    {
+      "title": "Second Post",
+      "content": "hello galaxy",
+      "tags": "tag2",
+      "author": "Sacha GRASSO",
+      "id": 2
+    },
+    {
+      "title": "Third Post",
+      "content": "hello universe",
+      "tags": "tag1",
+      "author": "Sacha GRASSO",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
       "firstName": "Mathilde",
       "lastName": "Chapolard",
       "email": "matchap@test.com",
@@ -17,6 +40,33 @@
       "contract": "fullTime",
       "about": "ola",
       "id": 6
+    },
+    {
+      "firstName": "Lilith",
+      "lastName": "GRASSO CHAPOLARD",
+      "email": "lil@test.com",
+      "gender": "female",
+      "contract": "partTime",
+      "about": "Petit beauté",
+      "id": 7
+    },
+    {
+      "firstName": "Mousse",
+      "lastName": "KATKIT",
+      "email": "mou@test.com",
+      "gender": "female",
+      "contract": "fullTime",
+      "about": "miaou",
+      "id": 8
+    },
+    {
+      "firstName": "Tira",
+      "lastName": "KITKAT",
+      "email": "tira@test.com",
+      "gender": "male",
+      "contract": "fullTime",
+      "about": "miaouuuuu",
+      "id": 9
     }
   ]
 }

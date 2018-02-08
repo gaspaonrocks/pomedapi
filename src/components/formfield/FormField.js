@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dropdown } from "semantic-ui-react";
+import { Dropdown, Segment } from "semantic-ui-react";
 import { Route, NavLink } from "react-router-dom";
 import FormUser from "./FormUser";
 import FormPost from "./FormPost";
@@ -11,16 +11,16 @@ const options = [
     id: 1,
     text: "Utilisateur",
     as: NavLink,
-    name: "user",
-    to: "/formfield/user"
+    value: "Utilisateur",
+    to: "/formfield/users"
   },
   {
     key: "p",
     id: 2,
     text: "Billet",
     as: NavLink,
-    name: "post",
-    to: "/formfield/post"
+    value: "Billet",
+    to: "/formfield/posts"
   }
 ];
 
@@ -34,10 +34,25 @@ export default class FormField extends Component {
     return (
       <div>
         <h1>Choose what you are gonna add</h1>
-        <Dropdown placeholder='Select Category' fluid selection options={options} />
-        <br />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/user`} component={FormUser} />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/post`} component={FormPost} />
+        <Segment vertical>
+          <Dropdown placeholder="Catégorie" selection options={options} />
+        </Segment>
+        <Segment vertical>
+          <Route
+            exact
+            /* the exact attributes is where its at */ path={`${
+              this.props.match.path
+            }/users`}
+            component={FormUser}
+          />
+          <Route
+            exact
+            /* the exact attributes is where its at */ path={`${
+              this.props.match.path
+            }/posts`}
+            component={FormPost}
+          />
+        </Segment>
       </div>
     );
   }

@@ -1,44 +1,73 @@
 import React, { Component } from "react";
-import { Dropdown } from 'semantic-ui-react'
+import { Button, Dropdown, Icon, Segment } from "semantic-ui-react";
 import { Route, NavLink } from "react-router-dom";
 
-import ListUsers from './ListUsers';
-import ListPosts from './ListPosts';
+import ListUsers from "./ListUsers";
+import ListPosts from "./ListPosts";
 
 // TODO : => pass the 'options' to a config file
 const options = [
   {
     key: "u",
     id: 1,
-    text: "Utilisateur",
+    text: "Users",
     as: NavLink,
-    name: "user",
-    to: "/listview/users"
+    to: "/listview/users",
+    value: "users"
   },
   {
     key: "p",
     id: 2,
-    text: "Billet",
+    text: "Posts",
     as: NavLink,
-    name: "post",
-    to: "/listview/posts"
+    to: "/listview/posts",
+    value: "posts"
   }
 ];
 
 export default class ListView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  constructor() {
+    super();
+    this.state = { target: "" };
   }
+
+  handleChange = (e, data) => {
+    this.setState({ target: data.value });
+  };
 
   render() {
     return (
       <div>
         <h1>Choose what you are gonna list</h1>
-        <Dropdown placeholder='Select Category' fluid selection options={options} />
-        <br />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/users`} component={ListUsers} />
-        <Route exact /* the exact attributes is where its at */ path={`${this.props.match.path}/posts`} component={ListPosts} />
+        <Segment vertical>
+          <NavLink to={`/formfield/${this.state.target}`}>
+            <Button color="teal" icon>
+              <Icon name="add" />
+            </Button>
+          </NavLink>
+          <Dropdown
+            placeholder="Catégorie"
+            selection
+            options={options}
+            onChange={this.handleChange}
+          />
+        </Segment>
+        <Segment vertical>
+          <Route
+            exact
+            /* the exact attributes is where its at */ path={`${
+              this.props.match.path
+            }/users`}
+            component={ListUsers}
+          />
+          <Route
+            exact
+            /* the exact attributes is where its at */ path={`${
+              this.props.match.path
+            }/posts`}
+            component={ListPosts}
+          />
+        </Segment>
       </div>
     );
   }

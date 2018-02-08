@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import {
   Button,
-  Checkbox,
   Form,
   Input,
   Radio,
   Select,
   TextArea
 } from "semantic-ui-react";
-import axios from 'axios';
+import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 // TODO : => pass the options to a config file
 const options = [
@@ -17,14 +17,15 @@ const options = [
 ];
 
 export default class FormFieldUser extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  constructor() {
+    super();
+    this.state = { redirect: false };
   }
 
-  handleForm = (e, data) => { };
+  handleForm = (e, data) => {};
 
   handleChange = (e, data) => {
+    console.log(data);
     data.type === "checkbox"
       ? this.setState({ [data.name]: data.checked })
       : this.setState({ [data.name]: data.value });
@@ -40,32 +41,87 @@ export default class FormFieldUser extends Component {
       about: this.state.about
     };
     console.log(user);
-    return axios.post("http://localhost:12345/users", user).then(response => console.log(response)).catch(error => console.log(error));
+    return axios
+      .post("http://localhost:12345/users", user)
+      .then(response => {
+        console.log(response);
+        this.setState({ redirect: true });
+      })
+      .catch(error => console.log(error));
     // TODO : => penser à tester dans le même environnement ou à trouver un moyen de les faire communiquer
     /* fetch("http://localhost:12345/users", { method: "POST", body: user })
       .then(response => console.log(response))
       .catch(error => console.log(error)); */
-  }
+  };
 
   render() {
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect to="/listview/posts" />;
+    }
+
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group widths="equal">
-          <Form.Field control={Input} name="firstName" label="First name" placeholder="First name" onChange={this.handleChange} />
-          <Form.Field control={Input} name="lastName" label="Last name" placeholder="Last name" onChange={this.handleChange} />
-          <Form.Field control={Select} name="gender" label="Gender" options={options} placeholder="Gender" onChange={this.handleChange} />
+          <Form.Field
+            control={Input}
+            name="firstName"
+            label="First name"
+            placeholder="First name"
+            onChange={this.handleChange}
+          />
+          <Form.Field
+            control={Input}
+            name="lastName"
+            label="Last name"
+            placeholder="Last name"
+            onChange={this.handleChange}
+          />
+          <Form.Field
+            control={Select}
+            name="gender"
+            label="Gender"
+            options={options}
+            placeholder="Gender"
+            onChange={this.handleChange}
+          />
         </Form.Group>
 
-        <Form.Field control={Input} name="email" label="Email" placeholder="Email" onChange={this.handleChange} />
+        <Form.Field
+          control={Input}
+          name="email"
+          label="Email"
+          placeholder="Email"
+          onChange={this.handleChange}
+        />
 
         <Form.Group inline>
           <label>Contrat</label>
-          <Form.Field control={Radio} name="contract" label="Temps Plein" value="fullTime" checked={this.state.contract === "fullTime"} onChange={this.handleChange} />
-          <Form.Field control={Radio} name="contract" label="Temps Partiel" value="partTime" checked={this.state.contract === "partTime"} onChange={this.handleChange} />
+          <Form.Field
+            control={Radio}
+            name="contract"
+            label="Temps Plein"
+            value="fullTime"
+            checked={this.state.contract === "fullTime"}
+            onChange={this.handleChange}
+          />
+          <Form.Field
+            control={Radio}
+            name="contract"
+            label="Temps Partiel"
+            value="partTime"
+            checked={this.state.contract === "partTime"}
+            onChange={this.handleChange}
+          />
         </Form.Group>
-        <Form.Field control={TextArea} name="about" label="About" placeholder="Tell us more about him/her..." onChange={this.handleChange} />
-        <Checkbox label="I agree with the ToA" name="agreedOn" checked={this.state.agreedOn} onChange={this.handleChange} />
-        <br /><br />
+        <Form.Field
+          control={TextArea}
+          name="about"
+          label="About"
+          placeholder="Tell us more about him/her..."
+          onChange={this.handleChange}
+        />
         <Form.Button control={Button}>Submit</Form.Button>
       </Form>
     );
